@@ -1,0 +1,48 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - SVPullToRefresh (0.4.1)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.2.1)
+  - SVPullToRefresh
+  - YYKit (from `https://gitee.com/zhuzhuxingtianxia/YYKit.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - SVPullToRefresh
+
+EXTERNAL SOURCES:
+  YYKit:
+    :git: https://gitee.com/zhuzhuxingtianxia/YYKit.git
+
+CHECKOUT OPTIONS:
+  YYKit:
+    :commit: f3ed37dea3be20c3c892e4055a9b03eda418edd0
+    :git: https://gitee.com/zhuzhuxingtianxia/YYKit.git
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  YYKit: de72f824784b2f40a8f34509b974aecff13141c1
+
+PODFILE CHECKSUM: b2469d59052e45582b7066dfae559f652af1e847
+
+COCOAPODS: 1.5.2
