@@ -18,7 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubview:self.pageView];
-        self.pageView.frame = CGRectMake(0, 0, frame.size.width, 200);
+        self.pageView.frame = CGRectMake(0, 0, frame.size.width, 80);
         
         [self addSubview:self.label];
         

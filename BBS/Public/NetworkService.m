@@ -50,16 +50,19 @@
     [request setValue:@"ios_buyer" forHTTPHeaderField:@"app_name"];
     request.timeoutInterval = 20;
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"response" ofType:@"json"];
-    if (path) {
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        if (json) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                handler(json,nil);
-            });
-            return;
+    if ([url isEqualToString:@"buyer/market/goods/classify/classes"]) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"response" ofType:@"json"];
+        if (path) {
+            NSData *data = [NSData dataWithContentsOfFile:path];
+            id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            if (json) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    handler(json,nil);
+                });
+                return;
+            }
         }
+        
     }
     
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];

@@ -5,6 +5,9 @@
 //  Created by ZZJ on 2019/8/9.
 //  Copyright © 2019 Jion. All rights reserved.
 //
+//状态栏高
+#define statusBarH    CGRectGetHeight([UIApplication sharedApplication].statusBarFrame)
+#define safeAreaBottomH (statusBarH > 20 ? 34 : 0)
 
 #import <Foundation/Foundation.h>
 

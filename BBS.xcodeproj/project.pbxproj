@@ -28,6 +28,11 @@
 		B69F137722FABCBF003338C4 /* MarketGoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B69F137622FABCBF003338C4 /* MarketGoodsController.m */; };
 		B69F137A22FABD0B003338C4 /* TCMCartManger.m in Sources */ = {isa = PBXBuildFile; fileRef = B69F137922FABD0B003338C4 /* TCMCartManger.m */; };
 		B69F137D22FACE2A003338C4 /* TCMCartNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B69F137C22FACE2A003338C4 /* TCMCartNetwork.m */; };
+		B6BD5A66230424200097CF3F /* HMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BD5A65230424200097CF3F /* HMarketViewController.m */; };
+		B6BD5A69230424670097CF3F /* HMarketScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BD5A68230424670097CF3F /* HMarketScrollView.m */; };
+		B6BD5A6C230424BD0097CF3F /* HMarketClassTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BD5A6B230424BD0097CF3F /* HMarketClassTableView.m */; };
+		B6BD5A6F230424E00097CF3F /* HMarketGoodsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BD5A6E230424E00097CF3F /* HMarketGoodsTableView.m */; };
+		B6BD5A722304255C0097CF3F /* HMarketSubClassCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BD5A712304255C0097CF3F /* HMarketSubClassCollectionView.m */; };
 		B6F9D0F422FD66030065D16D /* TCMMarketGoodsClassModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F9D0F322FD66030065D16D /* TCMMarketGoodsClassModel.m */; };
 		D2B581EDD610F6605F99142F /* Pods_BBS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19FE32E1AA44458AD05A830 /* Pods_BBS.framework */; };
 		DF4A93DE69C7EA76A962016A /* Pods_BBSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D0F9060B4E86246D63A2C99 /* Pods_BBSUITests.framework */; };
@@ -94,6 +99,16 @@
 		B69F137922FABD0B003338C4 /* TCMCartManger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMCartManger.m; sourceTree = "<group>"; };
 		B69F137B22FACE2A003338C4 /* TCMCartNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMCartNetwork.h; sourceTree = "<group>"; };
 		B69F137C22FACE2A003338C4 /* TCMCartNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMCartNetwork.m; sourceTree = "<group>"; };
+		B6BD5A64230424200097CF3F /* HMarketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMarketViewController.h; sourceTree = "<group>"; };
+		B6BD5A65230424200097CF3F /* HMarketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMarketViewController.m; sourceTree = "<group>"; };
+		B6BD5A67230424670097CF3F /* HMarketScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMarketScrollView.h; sourceTree = "<group>"; };
+		B6BD5A68230424670097CF3F /* HMarketScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMarketScrollView.m; sourceTree = "<group>"; };
+		B6BD5A6A230424BD0097CF3F /* HMarketClassTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMarketClassTableView.h; sourceTree = "<group>"; };
+		B6BD5A6B230424BD0097CF3F /* HMarketClassTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMarketClassTableView.m; sourceTree = "<group>"; };
+		B6BD5A6D230424E00097CF3F /* HMarketGoodsTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMarketGoodsTableView.h; sourceTree = "<group>"; };
+		B6BD5A6E230424E00097CF3F /* HMarketGoodsTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMarketGoodsTableView.m; sourceTree = "<group>"; };
+		B6BD5A702304255C0097CF3F /* HMarketSubClassCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMarketSubClassCollectionView.h; sourceTree = "<group>"; };
+		B6BD5A712304255C0097CF3F /* HMarketSubClassCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMarketSubClassCollectionView.m; sourceTree = "<group>"; };
 		B6F9D0F222FD66030065D16D /* TCMMarketGoodsClassModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCMMarketGoodsClassModel.h; sourceTree = "<group>"; };
 		B6F9D0F322FD66030065D16D /* TCMMarketGoodsClassModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCMMarketGoodsClassModel.m; sourceTree = "<group>"; };
 		C8E58AFEA2E6100BF395433F /* Pods-BBSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BBSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BBSUITests/Pods-BBSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +215,7 @@
 				B69F134122FAB9AD003338C4 /* ViewController.m */,
 				B69F137022FABA7A003338C4 /* Cart */,
 				B69F136F22FABA71003338C4 /* Market */,
+				B6BD5A63230423DC0097CF3F /* HMarket */,
 				B69F134322FAB9AD003338C4 /* Main.storyboard */,
 				B69F134622FAB9B2003338C4 /* Assets.xcassets */,
 				B69F134822FAB9B2003338C4 /* LaunchScreen.storyboard */,
@@ -263,6 +279,23 @@
 				B69F137C22FACE2A003338C4 /* TCMCartNetwork.m */,
 			);
 			path = CartManger;
+			sourceTree = "<group>";
+		};
+		B6BD5A63230423DC0097CF3F /* HMarket */ = {
+			isa = PBXGroup;
+			children = (
+				B6BD5A64230424200097CF3F /* HMarketViewController.h */,
+				B6BD5A65230424200097CF3F /* HMarketViewController.m */,
+				B6BD5A67230424670097CF3F /* HMarketScrollView.h */,
+				B6BD5A68230424670097CF3F /* HMarketScrollView.m */,
+				B6BD5A6A230424BD0097CF3F /* HMarketClassTableView.h */,
+				B6BD5A6B230424BD0097CF3F /* HMarketClassTableView.m */,
+				B6BD5A6D230424E00097CF3F /* HMarketGoodsTableView.h */,
+				B6BD5A6E230424E00097CF3F /* HMarketGoodsTableView.m */,
+				B6BD5A702304255C0097CF3F /* HMarketSubClassCollectionView.h */,
+				B6BD5A712304255C0097CF3F /* HMarketSubClassCollectionView.m */,
+			);
+			path = HMarket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -481,11 +514,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68451F62302CCC4005D8F06 /* TCMPageView.m in Sources */,
+				B6BD5A6C230424BD0097CF3F /* HMarketClassTableView.m in Sources */,
 				B6F9D0F422FD66030065D16D /* TCMMarketGoodsClassModel.m in Sources */,
+				B6BD5A6F230424E00097CF3F /* HMarketGoodsTableView.m in Sources */,
 				B69F137A22FABD0B003338C4 /* TCMCartManger.m in Sources */,
 				B68451DF230114EA005D8F06 /* TCMMarketGoodsTableCell.m in Sources */,
+				B6BD5A722304255C0097CF3F /* HMarketSubClassCollectionView.m in Sources */,
+				B6BD5A69230424670097CF3F /* HMarketScrollView.m in Sources */,
 				B69F137422FABC44003338C4 /* MarketViewController.m in Sources */,
 				B68451F52302CCC4005D8F06 /* NetworkService.m in Sources */,
+				B6BD5A66230424200097CF3F /* HMarketViewController.m in Sources */,
 				B68451E92302C337005D8F06 /* TCMMarketHeaderView.m in Sources */,
 				B69F134222FAB9AD003338C4 /* ViewController.m in Sources */,
 				B69F137D22FACE2A003338C4 /* TCMCartNetwork.m in Sources */,

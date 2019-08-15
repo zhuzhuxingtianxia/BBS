@@ -28,7 +28,7 @@
     
     self.contentTable.frame = self.view.bounds;
     [self.view addSubview:self.contentTable];
-    TCMMarketHeaderView *headerView = [[TCMMarketHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 300)];
+    TCMMarketHeaderView *headerView = [[TCMMarketHeaderView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 100)];
     self.contentTable.tableHeaderView = headerView;
     
     _marketGoods = [MarketGoodsController new];

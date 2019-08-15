@@ -33,13 +33,22 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="EvV-yf-zih"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23u-6M-5al">
+                        <rect key="frame" x="94" y="54.5" width="36" height="16"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="1" green="0.099659575190000002" blue="0.22732045949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="CGe-cB-ETR" firstAttribute="top" secondItem="P4g-Zd-LLQ" secondAttribute="top" id="9Cu-fA-cY3"/>
+                    <constraint firstItem="23u-6M-5al" firstAttribute="leading" secondItem="CGe-cB-ETR" secondAttribute="leading" id="GYS-oU-04b"/>
+                    <constraint firstItem="23u-6M-5al" firstAttribute="bottom" secondItem="P4g-Zd-LLQ" secondAttribute="bottom" id="Vxp-tp-fhM"/>
                     <constraint firstAttribute="bottom" secondItem="P4g-Zd-LLQ" secondAttribute="bottom" constant="26" id="gLA-sb-NKs"/>
                     <constraint firstItem="P4g-Zd-LLQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="nxg-2g-dxd"/>
                     <constraint firstAttribute="trailingMargin" secondItem="CGe-cB-ETR" secondAttribute="trailing" constant="10" id="s1n-ec-QM4"/>
@@ -49,7 +58,9 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="goodsImg" destination="P4g-Zd-LLQ" id="fLw-At-FMx"/>
                 <outlet property="nameLabel" destination="CGe-cB-ETR" id="urK-mw-rzt"/>
+                <outlet property="priceLabel" destination="23u-6M-5al" id="8Lg-lH-589"/>
             </connections>
             <point key="canvasLocation" x="129.59999999999999" y="177.21139430284859"/>
         </tableViewCell>

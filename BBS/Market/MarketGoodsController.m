@@ -10,6 +10,7 @@
 #import <YYKit/YYKit.h>
 #import "TCMMarketGoodsTableCell.h"
 #import "TCMTableView.h"
+#import "NetworkService.h"
 
 @interface MarketGoodsController ()<UITableViewDelegate,UITableViewDataSource,UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UITableView *classTableView;
@@ -26,6 +27,7 @@
 @property(nonatomic) CGPoint lastOffset;//记录上次的偏移量
 @property (nonatomic) BOOL drag;
 @property (nonatomic,weak,readonly)TCMTableView *mySupView;
+@property (nonatomic) NSIndexPath *taregtIndexPath;
 
 @end
 
@@ -230,18 +232,49 @@
     [self scrollToSectionAtClassId:classID];
 }
 
-#pragma mark --loadGoodsData
+#pragma mark -- 加载数据
 - (void)loadGoodsDataWithMarketID:(NSString *)marketID calssId:(NSString*)calssId{
     if (!calssId) {
         return;
     }
 //    NSLog(@"加载品类数据");
+    NSMutableDictionary *paras = [[NSMutableDictionary alloc]init];
+    
+    [paras setValue:@"" forKey:@"plotarea_lng"];
+    [paras setValue:@"" forKey:@"plotarea_lat"];
+    [paras setValue:marketID forKey:@"marketId"];
+    [paras setValue:calssId forKey:@"spuId"];
+    [paras setValue:self.goodsID forKey:@"goodsId"];
+    
+    [NetworkService sendRequestWithUrl:@"buyer/market/goods/listgoods" parameters:paras completionHandler:^(id  _Nonnull response, NSError * _Nonnull connectionError) {
+        if (response) {
+            NSMutableArray<TCMMarketGoodsModel*> *goodsList = [TCMMarketGoodsModel modelArrayWithJSON:response[@"goodsList"]];
+            
+            for (TCMMarketGoodsSectionModel *showData in self.showDatas){
+                if ([calssId isEqualToString:showData.sectionHeaderData.classId]&&goodsList.count>0) {
+                    if ([goodsList.firstObject.goods_id isEqualToString:self.goodsID]) {
+                        goodsList.firstObject.highlight = YES;
+                    }
+                    showData.rowsData = goodsList;
+                    [self.goodsTabelView reloadData];
+                    if (self.taregtIndexPath) {
+                        [self.goodsTabelView scrollToRowAtIndexPath:self.taregtIndexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
+                    }
+                    
+                    break;
+                }
+            }
+          
+        }
+        
+        
+    }];
 }
 
 #pragma mark -- UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     self.drag = YES;
-    
+    self.taregtIndexPath = nil;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -282,7 +315,7 @@
         self.lastOffset = self.goodsTabelView.contentOffset;
     }
     
-    //一下为x业务处理
+    //一下为业务处理
     if (scrollView == self.goodsTabelView) {
         NSIndexPath *indexPath = self.goodsTabelView.indexPathsForVisibleRows.firstObject;
         
@@ -335,6 +368,7 @@
             if (obj.rowsData.count > 0){
                 self.drag = NO;
                 NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:idx];
+                self.taregtIndexPath = indexPath;
                 [self.goodsTabelView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
                 *stop = YES;
             }
@@ -450,6 +484,11 @@
     if (!_goodsTabelView) {
         _goodsTabelView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _goodsTabelView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _goodsTabelView.decelerationRate = 1.0;
+        //采用预估高度可防止加载抖动问题
+        _goodsTabelView.estimatedRowHeight = 60;
+        _goodsTabelView.estimatedSectionHeaderHeight = 0;
+        _goodsTabelView.estimatedSectionFooterHeight = 0;
         _goodsTabelView.delegate = self;
         _goodsTabelView.dataSource = self;
         _goodsTabelView.rowHeight = UITableViewAutomaticDimension;

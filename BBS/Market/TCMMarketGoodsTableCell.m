@@ -93,7 +93,8 @@
 
 @interface TCMMarketGoodsTableCell ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *goodsImg;
 @end
 @implementation TCMMarketGoodsTableCell
 
@@ -105,13 +106,23 @@
 -(void)setData:(TCMMarketGoodsModel*)data {
     _data = data;
     
+    self.contentView.backgroundColor = data.highlight ?  [UIColor colorWithHexString:@"#fef2db"]: [UIColor whiteColor];
+    
     _nameLabel.backgroundColor =  data.goods_id.length > 0 ? [UIColor clearColor] : [UIColor colorWithHexString:@"#f5f5f9"];
+    _priceLabel.backgroundColor = data.goods_id.length > 0 ? [UIColor clearColor] : [UIColor colorWithHexString:@"#f5f5f9"];
+    
     if (data.goods_name.length>0) {
         [_nameLabel setText: [NSString stringWithFormat:@"%@%@",data.goods_name,data.standard_description?:@""]];
     }else {
         _nameLabel.text = @"                          ";
     }
+    if (data.goods_price.length) {
+        _priceLabel.text = [NSString stringWithFormat:@"¥%@",data.goods_store_price];
+    }else{
+        _priceLabel.text = @"                   ";
+    }
     
+    [_goodsImg setImageWithURL:[NSURL URLWithString:data.goods_img] placeholder:nil];
     
 }
 

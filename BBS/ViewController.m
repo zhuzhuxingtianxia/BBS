@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "TCMCartNetwork.h"
 #import "MarketViewController.h"
+#import "HMarketViewController.h"
 
 @interface ViewController ()
 @property(nonatomic,strong)TCMCartNetwork *cart;
@@ -36,6 +37,10 @@
     MarketViewController *market = [MarketViewController new];
     //选中商品
     market.goodsID = @"65733";
+    [self.navigationController pushViewController:market animated:YES];
+}
+- (IBAction)hhPushAction:(id)sender {
+    HMarketViewController *market = [HMarketViewController new];
     [self.navigationController pushViewController:market animated:YES];
 }
 

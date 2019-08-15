@@ -82,6 +82,14 @@
                                     <action selector="pushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R3S-ro-SEh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3h-bR-oyk">
+                                <rect key="frame" x="147" y="208" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="H对比"/>
+                                <connections>
+                                    <action selector="hhPushAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Up6-hV-Rwa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
